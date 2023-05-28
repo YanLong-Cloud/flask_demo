@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% set active_page = "new" %}
+{% block title %}Adding new games{% endblock %}
+
+{% block content %}
+
+{% if error %}
+<p><strong>Error:</strong> {{ error }} </p>
+{% endif %}
+
+<form action="#" method="post">
+    <div class="container-md">
+        <input class="form-control" type="text" placeholder="Name of game" name="game_name" required>
+        <input class="form-control" type="number" min="1" step="1" placeholder=" Min Player Count"
+            name="min_player_count" required>
+        <input class="form-control" type="number" min="1" step="1" placeholder=" Max Player Count"
+            name="max_player_count" required>
+        <input class="form-control" type="number" step="0.1" placeholder="Cost of game" name="cost" required>
+        <button type="submit" class="btn btn-primary" value="submit">Add</button>
+    </div>
+</form>
+{% endblock %}
